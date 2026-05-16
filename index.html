@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rilwan Olajide Buari | Design & Full-Stack Portfolio</title>
-  <meta name="description" content="Portfolio of Rilwan Olajide Buari — Product Design, UX, Full-Stack Software Engineering, and AI Systems Evaluation." />
+  <title>RILWAN OLAJIDE BUARI | Software Engineering, Product UX & AI Systems Evaluation</title>
+  <meta name="description"
+    content="Portfolio of RILWAN OLAJIDE BUARI — Software Engineering, Product Design, UX, Full-Stack Development, Data Analysis, and AI Systems Evaluation." />
   <style>
     :root {
       --bg: #f6f8fb;
@@ -14,6 +16,8 @@
       --accent: #0f766e;
       --accent-dark: #115e59;
       --border: #e5e7eb;
+      --soft: #ecfdf5;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
     }
 
     * {
@@ -22,8 +26,12 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Inter, Arial, sans-serif;
+      font-family: Inter, Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -35,75 +43,75 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1140px, 92%);
       margin: 0 auto;
     }
 
     header {
-      padding: 28px 0;
       position: sticky;
       top: 0;
-      background: rgba(246, 248, 251, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 10;
+      z-index: 20;
+      background: rgba(246, 248, 251, 0.92);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
     nav {
+      min-height: 72px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
     .logo {
-      font-weight: 800;
-      font-size: 1.05rem;
+      font-weight: 900;
       color: var(--accent-dark);
+      letter-spacing: -0.02em;
     }
 
     .nav-links {
       display: flex;
       gap: 20px;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--muted);
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--accent-dark);
     }
 
     .hero {
-      padding: 80px 0 50px;
+      padding: 86px 0 54px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 36px;
-      align-items: center;
+      grid-template-columns: 1.45fr 0.85fr;
+      gap: 32px;
+      align-items: stretch;
     }
 
     .eyebrow {
       color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       font-size: 0.78rem;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 1;
-      margin-bottom: 20px;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 22px;
     }
 
-    .hero p {
-      font-size: 1.1rem;
+    .hero-text {
       color: var(--muted);
-      max-width: 720px;
+      font-size: 1.08rem;
+      max-width: 760px;
     }
 
     .cta-row {
@@ -116,10 +124,13 @@
     .btn {
       padding: 13px 18px;
       border-radius: 999px;
-      font-weight: 700;
       border: 1px solid var(--border);
+      font-weight: 800;
       background: var(--card);
       transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn.primary {
@@ -130,26 +141,39 @@
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(15, 118, 110, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card,
+    .card,
+    .skill-box,
+    .timeline-item,
+    .case-study {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
     }
 
     .profile-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
       padding: 26px;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
     }
 
-    .profile-card h3 {
+    .profile-card h2 {
+      font-size: 1.35rem;
       margin-bottom: 10px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .stat-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     .stat {
@@ -161,24 +185,48 @@
 
     .stat strong {
       display: block;
-      font-size: 1.3rem;
+      font-size: 1.45rem;
       color: var(--accent-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat small {
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     section {
-      padding: 54px 0;
+      padding: 56px 0;
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 14px;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
     }
 
     .section-intro {
       color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 26px;
+      max-width: 800px;
+      margin-bottom: 28px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      border: 1px solid #ccfbf1;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
 
     .cards {
@@ -188,16 +236,13 @@
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
       padding: 24px;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.04);
     }
 
     .card h3 {
-      margin-bottom: 12px;
       color: var(--accent-dark);
+      margin-bottom: 12px;
+      font-size: 1.16rem;
     }
 
     .card p {
@@ -205,20 +250,13 @@
       font-size: 0.96rem;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      font-size: 0.78rem;
-      padding: 6px 10px;
-      background: #ecfdf5;
-      color: var(--accent-dark);
-      border-radius: 999px;
-      border: 1px solid #ccfbf1;
+    .card ul,
+    .skill-box ul,
+    .timeline-item ul,
+    .case-study ul {
+      padding-left: 18px;
+      margin-top: 12px;
+      color: var(--muted);
     }
 
     .skills-grid {
@@ -228,21 +266,32 @@
     }
 
     .skill-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
       padding: 20px;
     }
 
     .skill-box h3 {
-      margin-bottom: 10px;
+      color: var(--accent-dark);
+      margin-bottom: 8px;
       font-size: 1rem;
     }
 
-    .skill-box ul {
-      padding-left: 18px;
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .case-study {
+      padding: 26px;
+    }
+
+    .case-study h3 {
+      margin-bottom: 10px;
+      color: var(--accent-dark);
+    }
+
+    .case-study p {
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
     .timeline {
@@ -251,51 +300,73 @@
     }
 
     .timeline-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 22px;
+      padding: 24px;
     }
 
-    .timeline-item span {
+    .timeline-item .meta {
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 8px;
     }
 
     .timeline-item p {
       color: var(--muted);
-      margin-top: 8px;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .contact-card {
+      padding: 30px;
+      text-align: center;
     }
 
     footer {
-      padding: 36px 0;
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
       text-align: center;
       color: var(--muted);
-      border-top: 1px solid var(--border);
+      font-size: 0.92rem;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
+
       .hero-grid,
       .cards,
-      .skills-grid {
+      .skills-grid,
+      .case-grid,
+      .education-grid {
         grid-template-columns: 1fr;
       }
 
       .nav-links {
         display: none;
       }
+
+      .hero {
+        padding-top: 56px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
       <nav>
-        <a class="logo" href="#">Rilwan Buari</a>
+        <a class="logo" href="#">RILWAN OLAJIDE BUARI</a>
         <div class="nav-links">
-          <a href="#work">Work</a>
+          <a href="#profile">Profile</a>
           <a href="#skills">Skills</a>
+          <a href="#work">Work</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
@@ -304,141 +375,268 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="profile">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Product Design • UX • Full-Stack Engineering • AI Evaluation</p>
-          <h1>Designing usable, reliable digital products and AI-assisted workflows.</h1>
-          <p>
-            I combine product thinking, UX evaluation, full-stack software engineering, and AI systems evaluation to build and assess digital experiences that are clear, functional, and technically reliable.
+          <p class="eyebrow">Software Engineering • Product UX • AI Systems Evaluation</p>
+          <h1>RILWAN OLAJIDE BUARI</h1>
+          <p class="hero-text">
+            Software Engineering, Product Design/UX, and AI Systems Evaluation Specialist with 6+ years of combined
+            experience across Python development, data analysis, full-stack applications, user-focused digital
+            workflows, and LLM evaluation.
+          </p>
+          <p class="hero-text" style="margin-top: 14px;">
+            I evaluate, build, and improve digital products by combining software engineering discipline, UX judgment,
+            structured feedback systems, and AI interaction quality assessment.
           </p>
           <div class="cta-row">
             <a class="btn primary" href="#work">View Selected Work</a>
-            <a class="btn" href="mailto:rilwanolajidebuari@gmail.com">Contact Me</a>
+            <a class="btn" href="mailto:rilwanolajidebuari@gmail.com">Email Me</a>
             <a class="btn" href="https://github.com/rilwanolajidebuari" target="_blank">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/rilwan-olajide-buari" target="_blank">LinkedIn</a>
           </div>
         </div>
+
         <aside class="profile-card">
-          <h3>Portfolio Focus</h3>
+          <h2>Portfolio Snapshot</h2>
           <p>
-            Product design evaluation, AI interaction quality, full-stack application workflows, dashboards, and human-centered digital systems.
+            A hybrid portfolio focused on software engineering, product reasoning, UX evaluation, AI model evaluation,
+            and data-driven digital products.
           </p>
           <div class="stat-grid">
             <div class="stat"><strong>6+</strong><small>Years combined experience</small></div>
-            <div class="stat"><strong>AI</strong><small>LLM evaluation & annotation</small></div>
-            <div class="stat"><strong>UX</strong><small>Workflow & usability review</small></div>
-            <div class="stat"><strong>Code</strong><small>Python, JS, SQL</small></div>
+            <div class="stat"><strong>AI</strong><small>LLM evaluation & RLHF-style review</small></div>
+            <div class="stat"><strong>UX</strong><small>User journeys & workflow critique</small></div>
+            <div class="stat"><strong>Code</strong><small>Python, JavaScript, SQL</small></div>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Remote UK</span>
+            <span class="pill">C1/C2 English</span>
+            <span class="pill">GitHub-ready</span>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="work">
+    <section>
       <div class="container">
-        <h2 class="section-title">Selected Work</h2>
+        <h2 class="section-title">Professional Summary</h2>
         <p class="section-intro">
-          A portfolio of product, UX, full-stack, and AI evaluation work demonstrating structured thinking, usability judgment, and technical execution.
+          Product-focused Software Engineer and AI Systems Evaluation Specialist with experience across software
+          development, data analysis, AI evaluation, and user-focused digital workflows. Experienced in evaluating
+          interfaces, workflows, and AI-generated outputs for usability, clarity, consistency, functional quality,
+          reasoning quality, and real-world usefulness.
         </p>
-        <div class="cards">
-          <article class="card">
-            <h3>AI Interaction Evaluation Dashboard</h3>
-            <p>
-              A concept dashboard for reviewing LLM outputs against usability, reasoning, clarity, and usefulness criteria. Designed for AI evaluators who need fast, structured, repeatable judgment workflows.
-            </p>
-            <div class="tags">
-              <span class="tag">UX Evaluation</span><span class="tag">AI Systems</span><span class="tag">Rubrics</span>
-            </div>
-          </article>
-          <article class="card">
-            <h3>Full-Stack Productivity Web App</h3>
-            <p>
-              A full-stack application concept combining frontend interaction flows, backend APIs, task management, and data-driven views. Focused on clear user journeys and maintainable system architecture.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">REST APIs</span>
-            </div>
-          </article>
-          <article class="card">
-            <h3>Engineering Data Reporting Interface</h3>
-            <p>
-              A dashboard-style interface for turning complex engineering datasets into structured, readable reports with strong hierarchy, validation checks, and decision-focused summaries.
-            </p>
-            <div class="tags">
-              <span class="tag">Data UX</span><span class="tag">Dashboards</span><span class="tag">Reporting</span>
-            </div>
-          </article>
-        </div>
+        <p class="section-intro">
+          My work sits at the intersection of software engineering, UX evaluation, and AI model improvement: executing
+          and testing generated code, identifying edge cases and hallucinations, reviewing interaction flows, and
+          delivering structured feedback that improves reliability, usability, and product quality.
+        </p>
       </div>
     </section>
 
     <section id="skills">
       <div class="container">
-        <h2 class="section-title">Skills & Tools</h2>
+        <h2 class="section-title">Core Technical Expertise</h2>
+        <p class="section-intro">
+          Skills drawn directly from software engineering, AI evaluation, product design, and user-centered digital
+          workflows.
+        </p>
         <div class="skills-grid">
           <div class="skill-box">
-            <h3>Product & UX</h3>
+            <h3>Python, Data & Statistics</h3>
             <ul>
-              <li>User journey analysis</li>
-              <li>Usability assessment</li>
-              <li>Design critique</li>
-              <li>Wireframe interpretation</li>
+              <li>Python algorithms and data structures</li>
+              <li>NumPy, Pandas, SciPy</li>
+              <li>Matplotlib and Seaborn</li>
+              <li>Hypothesis testing and correlations</li>
+              <li>Data validation and reproducibility</li>
             </ul>
           </div>
+
           <div class="skill-box">
-            <h3>Full-Stack</h3>
+            <h3>Software Engineering</h3>
             <ul>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>SQL</li>
-              <li>REST APIs</li>
+              <li>Full-stack application development</li>
+              <li>API design and integration</li>
+              <li>Debugging and output validation</li>
+              <li>Git/GitHub workflows</li>
+              <li>Technical documentation</li>
             </ul>
           </div>
+
           <div class="skill-box">
-            <h3>AI Evaluation</h3>
+            <h3>Product Design & UX</h3>
             <ul>
-              <li>LLM output review</li>
-              <li>RLHF-style feedback</li>
+              <li>User journey evaluation</li>
+              <li>Workflow analysis</li>
+              <li>Interface usability assessment</li>
+              <li>Design critique and product reasoning</li>
+              <li>Wireframe/mockup interpretation</li>
+            </ul>
+          </div>
+
+          <div class="skill-box">
+            <h3>AI / LLM Evaluation</h3>
+            <ul>
+              <li>RLHF-style response ranking</li>
+              <li>LLM code review</li>
               <li>Hallucination detection</li>
-              <li>Rubric scoring</li>
+              <li>Rubric-based annotation</li>
+              <li>Human-centered AI interaction review</li>
             </ul>
           </div>
-          <div class="skill-box">
-            <h3>Tools</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 class="section-title">Selected Portfolio Work</h2>
+        <p class="section-intro">
+          Representative project themes showing how I connect product thinking, UX evaluation, software engineering, and
+          AI systems review.
+        </p>
+
+        <div class="case-grid">
+          <article class="case-study">
+            <h3>AI Code Evaluation & Statistical Validation</h3>
+            <p>
+              Reviewed AI-generated Python scripts implementing regression, correlation, hypothesis testing, and
+              statistical calculations. Focused on correctness, assumptions, edge cases, and explanation quality.
+            </p>
             <ul>
-              <li>Git & GitHub</li>
-              <li>VS Code</li>
-              <li>Figma familiarity</li>
-              <li>HTML/CSS</li>
+              <li>Identified incorrect statistical assumptions and flawed reasoning</li>
+              <li>Validated outputs through code execution and targeted test cases</li>
+              <li>Produced corrected implementations with clear technical explanations</li>
             </ul>
-          </div>
+            <div class="pill-row">
+              <span class="pill">Python</span><span class="pill">Statistics</span><span class="pill">LLM
+                Evaluation</span>
+            </div>
+          </article>
+
+          <article class="case-study">
+            <h3>Full-Stack Software & UX Workflows</h3>
+            <p>
+              Built and tested full-stack web applications with emphasis on usability, responsiveness, API-driven data
+              flows, and maintainable frontend-backend architecture.
+            </p>
+            <ul>
+              <li>Designed user-focused application workflows</li>
+              <li>Developed backend logic using Python, JavaScript, and SQL</li>
+              <li>Improved usability through iteration, debugging, and workflow testing</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill">Full-Stack</span><span class="pill">REST APIs</span><span class="pill">UX Flow</span>
+            </div>
+          </article>
+
+          <article class="case-study">
+            <h3>AI Interaction Quality Review</h3>
+            <p>
+              Evaluated AI-generated outputs for usability, reasoning quality, clarity, consistency, and end-user
+              usefulness across structured annotation workflows.
+            </p>
+            <ul>
+              <li>Applied rubric-based scoring and structured feedback</li>
+              <li>Detected ambiguity, hallucinations, and weak explanations</li>
+              <li>Reviewed multi-step AI interaction flows for quality and consistency</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill">Product Evaluation</span><span class="pill">AI UX</span><span
+                class="pill">Rubrics</span>
+            </div>
+          </article>
+
+          <article class="case-study">
+            <h3>Data & Reporting Interfaces</h3>
+            <p>
+              Worked with operational and engineering datasets to transform complex information into structured reports,
+              decision-ready insights, and clearer user-facing outputs.
+            </p>
+            <ul>
+              <li>Analysed and validated operational datasets</li>
+              <li>Translated quantitative findings into clear summaries</li>
+              <li>Supported dashboards, data workflows, and reporting interfaces</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill">Data UX</span><span class="pill">Reporting</span><span class="pill">Decision
+                Support</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="experience">
       <div class="container">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title">Professional Experience</h2>
         <div class="timeline">
           <div class="timeline-item">
-            <span>2024 – Present</span>
+            <div class="meta">2024 – Present</div>
             <h3>Independent Contractor — AI Consultant / Product & LLM Evaluator</h3>
-            <p>
-              Evaluating AI-generated outputs, interaction flows, reasoning quality, and usability. Providing structured feedback to improve clarity, trust, usefulness, and product consistency.
-            </p>
+            <p><strong>iMerit Scholars and other AI data services platforms</strong></p>
+            <ul>
+              <li>Evaluated LLM-generated Python solutions for algorithmic correctness, statistical validity, and
+                edge-case handling.</li>
+              <li>Reviewed AI-generated outputs for usability, reasoning quality, clarity, and end-user usefulness.</li>
+              <li>Annotated and ranked model responses using structured rubrics aligned with RLHF-style methodologies.
+              </li>
+              <li>Identified hallucinations, logical flaws, ambiguity, and weak explanations impacting product quality.
+              </li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span>2022 – Present</span>
+            <div class="meta">2022 – Present</div>
             <h3>IT Career Switch UK — Software Engineer</h3>
-            <p>
-              Building and testing full-stack applications using Python, JavaScript, SQL, APIs, and Git-based workflows, with emphasis on maintainability and usability.
-            </p>
+            <p><strong>Apprenticeship: 2022 – 2023 | Full-Time: 2023 – Present</strong></p>
+            <ul>
+              <li>Designed, implemented, and tested full-stack applications using Python, JavaScript, and SQL.</li>
+              <li>Developed frontend workflows and backend systems with emphasis on usability and functionality.</li>
+              <li>Reviewed and refactored code for performance, readability, maintainability, and correctness.</li>
+              <li>Built APIs and data pipelines with strong emphasis on documentation and validation.</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span>2018 – 2019</span>
-            <h3>Ridify Transit — Engineering Analyst</h3>
-            <p>
-              Analyzed operational workflows and datasets, produced structured reports, and supported process improvement through data validation and clear communication.
-            </p>
+            <div class="meta">2018 – 2019</div>
+            <h3>Ridify Transit — Engineering Analyst (Software & Data Focus)</h3>
+            <ul>
+              <li>Analysed operational and engineering datasets to support planning and optimisation.</li>
+              <li>Validated data quality and identified inconsistencies impacting downstream analysis.</li>
+              <li>Produced structured reports translating quantitative findings into actionable decisions.</li>
+              <li>Evaluated system efficiency and identified process improvement opportunities.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+          <div class="card">
+            <h3>MSc Renewable Energy Engineering</h3>
+            <p><strong>2021 – 2022</strong></p>
+            <ul>
+              <li>System modelling</li>
+              <li>Quantitative analysis</li>
+              <li>Data-driven engineering decision-making</li>
+              <li>Technical presentation and reporting</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>BEng Civil Engineering</h3>
+            <p><strong>2013 – 2018</strong></p>
+            <ul>
+              <li>Engineering mathematics</li>
+              <li>Statistics and analytical problem-solving</li>
+              <li>Engineering systems thinking</li>
+              <li>Human-centered infrastructure design principles</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -446,11 +644,14 @@
 
     <section id="contact">
       <div class="container">
-        <div class="card">
-          <h2 class="section-title">Contact</h2>
+        <div class="card contact-card">
+          <h2 class="section-title">Contact RILWAN OLAJIDE BUARI</h2>
           <p>Email: <a href="mailto:rilwanolajidebuari@gmail.com">rilwanolajidebuari@gmail.com</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/rilwan-olajide-buari" target="_blank">linkedin.com/in/rilwan-olajide-buari</a></p>
-          <p>GitHub: <a href="https://github.com/rilwanolajidebuari" target="_blank">github.com/rilwanolajidebuari</a></p>
+          <p>Phone: 07479076349</p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/rilwan-olajide-buari"
+              target="_blank">linkedin.com/in/rilwan-olajide-buari</a></p>
+          <p>GitHub: <a href="https://github.com/rilwanolajidebuari" target="_blank">github.com/rilwanolajidebuari</a>
+          </p>
         </div>
       </div>
     </section>
@@ -458,8 +659,9 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Rilwan Olajide Buari. Product Design, UX, Full-Stack Software Engineering & AI Systems Evaluation.</p>
+      <p>© 2026 RILWAN OLAJIDE BUARI. Software Engineering, Product UX & AI Systems Evaluation.</p>
     </div>
   </footer>
 </body>
+
 </html>
